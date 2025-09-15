@@ -149,9 +149,19 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-xl md:text-2xl font-paradox text-iot-glow font-light tracking-wider"
+          className="text-xl md:text-2xl font-paradox text-iot-glow font-light tracking-wider mb-4"
         >
           Vishwakarma Institute of Technology, Kondhwa
+        </motion.p>
+
+        {/* Enhanced tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+          className="text-lg md:text-xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto"
+        >
+          Innovating Tomorrow's Connected World Through Technology & Learning
         </motion.p>
 
         {/* Scroll Indicator */}

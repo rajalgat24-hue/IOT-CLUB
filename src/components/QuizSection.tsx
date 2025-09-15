@@ -156,20 +156,40 @@ const AnimalScoreboard = ({
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
       className="absolute top-4 right-4 z-20"
     >
-      <div className="glass rounded-xl p-4 shadow-elegant">
+      <div className="glass rounded-xl p-6 shadow-elegant border border-iot-teal/30 bg-gradient-glass backdrop-blur-xl">
         <div className="text-center">
-          <div className="text-4xl mb-2">
+          <motion.div 
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            className="text-5xl mb-3 filter drop-shadow-lg"
+          >
             {animal === 'owl' && '🦉'}
             {animal === 'monkey' && '🐵'}
             {animal === 'fox' && '🦊'}
             {animal === 'parrot' && '🦜'}
             {animal === 'squirrel' && '🐿️'}
-          </div>
-          <div className={`text-sm font-semibold ${
-            isCorrect ? 'text-iot-teal' : 'text-iot-yellow'
-          }`}>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className={`text-sm font-paradox font-bold tracking-wider ${
+              isCorrect ? 'text-iot-teal' : 'text-iot-yellow'
+            }`}
+          >
             {message}
-          </div>
+          </motion.div>
+          {isCorrect && (
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.6, type: "spring" }}
+              className="mt-2"
+            >
+              ✨
+            </motion.div>
+          )}
         </div>
       </div>
     </motion.div>
@@ -273,11 +293,16 @@ const QuizSection = () => {
           exit={{ x: -300, opacity: 0 }}
           transition={{ type: "spring", stiffness: 100 }}
         >
-          <Card className="glass p-8 shadow-elegant">
+          <Card className="glass p-8 shadow-elegant border border-iot-teal/20">
             <div className="text-center mb-6">
-              <span className="text-sm text-muted-foreground font-paradox tracking-wide">
-                Question {currentQuestion + 1} of {quizData.length}
-              </span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-iot-navy/50 rounded-full border border-iot-teal/30">
+                <span className="text-sm text-iot-teal font-paradox font-semibold tracking-wide">
+                  QUESTION {currentQuestion + 1}
+                </span>
+                <span className="text-sm text-muted-foreground font-paradox">
+                  OF {quizData.length}
+                </span>
+              </div>
             </div>
             
             <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
@@ -286,41 +311,51 @@ const QuizSection = () => {
 
             <div className="space-y-4">
               {question.options.map((option, index) => (
-                <Button
+                <motion.div
                   key={index}
-                  onClick={() => handleAnswerSelect(index)}
-                  disabled={showResult}
-                  variant="outline"
-                  className={`w-full p-4 text-left justify-start transition-all duration-300 ${
-                    showResult && index === question.correct 
-                      ? 'border-iot-teal bg-iot-teal/10 text-iot-teal' 
-                      : showResult && index === selectedAnswer && index !== question.correct
-                      ? 'border-red-500 bg-red-500/10 text-red-400'
-                      : 'hover:border-iot-glow hover:bg-iot-glow/5'
-                  }`}
+                  whileHover={{ scale: 1.02, x: 4 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <span className="mr-4 font-paradox">
-                    {String.fromCharCode(65 + index)}.
-                  </span>
-                  {option}
-                </Button>
+                  <Button
+                    onClick={() => handleAnswerSelect(index)}
+                    disabled={showResult}
+                    variant="outline"
+                    className={`w-full p-4 text-left justify-start transition-all duration-300 border-2 ${
+                      showResult && index === question.correct 
+                        ? 'border-iot-teal bg-iot-teal/20 text-iot-teal shadow-glow' 
+                        : showResult && index === selectedAnswer && index !== question.correct
+                        ? 'border-red-500 bg-red-500/20 text-red-400'
+                        : 'border-iot-navy/50 hover:border-iot-teal/50 hover:bg-iot-teal/10 hover:shadow-elegant'
+                    }`}
+                  >
+                    <span className="mr-4 font-paradox font-bold text-iot-teal">
+                      {String.fromCharCode(65 + index)}.
+                    </span>
+                    <span className="font-medium">{option}</span>
+                  </Button>
+                </motion.div>
               ))}
             </div>
 
             <div className="mt-8 text-center">
-              <div className="w-full bg-iot-navy rounded-full h-2">
+              <div className="w-full bg-iot-navy/50 rounded-full h-3 border border-iot-teal/20 overflow-hidden">
                 <motion.div 
-                  className="bg-gradient-accent h-2 rounded-full"
+                  className="bg-gradient-accent h-full rounded-full shadow-glow"
                   initial={{ width: 0 }}
                   animate={{ 
                     width: `${((currentQuestion + 1) / quizData.length) * 100}%` 
                   }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 />
               </div>
-              <p className="text-sm text-muted-foreground mt-2">
-                Progress: {currentQuestion + 1}/{quizData.length}
-              </p>
+              <div className="flex justify-between items-center mt-3">
+                <span className="text-sm text-muted-foreground font-paradox">
+                  Progress: {Math.round(((currentQuestion + 1) / quizData.length) * 100)}%
+                </span>
+                <span className="text-sm text-iot-glow font-paradox">
+                  Score: {score}/{quizData.length}
+                </span>
+              </div>
             </div>
           </Card>
         </motion.div>
