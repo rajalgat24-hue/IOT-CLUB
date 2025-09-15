@@ -110,88 +110,18 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4">
-        {/* Animated Logo */}
-        <motion.div
-          initial={{ scale: 0, opacity: 0, rotateY: 180 }}
-          animate={{ scale: 1, opacity: 1, rotateY: 0 }}
-          transition={{ 
-            duration: 1.2, 
-            type: "spring", 
-            stiffness: 100,
-            delay: 0.2 
-          }}
-          className="mb-8 flex justify-center"
-        >
-          <div className="relative">
-            {/* Glowing ring around logo */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.8 }}
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-iot-teal via-iot-yellow to-iot-teal blur-xl opacity-40 animate-pulse"
-              style={{ padding: '20px' }}
-            />
-            
-            {/* Rotating outer ring */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full border-2 border-gradient-to-r from-iot-teal/50 via-transparent to-iot-yellow/50"
-              style={{ padding: '15px' }}
-            />
-            
-            {/* Main logo */}
-            <motion.img
-              src="/image.png"
-              alt="IoT Club Logo"
-              className="h-24 w-auto md:h-32 relative z-10"
-              style={{
-                filter: 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))',
-              }}
-              whileHover={{ 
-                scale: 1.1,
-                filter: 'drop-shadow(0 0 30px rgba(0, 255, 255, 0.8))'
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-            
-            {/* Floating particles around logo */}
-            {Array.from({ length: 6 }).map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-iot-teal rounded-full"
-                style={{
-                  top: '50%',
-                  left: '50%',
-                  transformOrigin: `${40 + i * 10}px 0px`,
-                }}
-                animate={{
-                  rotate: 360,
-                  opacity: [0.3, 1, 0.3],
-                }}
-                transition={{
-                  duration: 3 + i * 0.5,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: i * 0.2,
-                }}
-              />
-            ))}
-          </div>
-        </motion.div>
-
         {/* IOT Title */}
         <motion.div 
           className="mb-4 flex justify-center items-center space-x-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 1, delay: 0.5 }}
         >
           {iotTitle.split('').map((letter, index) => (
             <IoTLetter 
               key={index} 
               letter={letter} 
-              index={index + 3} 
+              index={index} 
               totalLetters={iotTitle.length} 
             />
           ))}
@@ -202,13 +132,13 @@ const HeroSection = () => {
           className="mb-8 flex justify-center items-center space-x-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: 0.8 }}
         >
           {clubTitle.split('').map((letter, index) => (
             <IoTLetter 
               key={index} 
               letter={letter} 
-              index={index + iotTitle.length + 3} 
+              index={index + iotTitle.length} 
               totalLetters={clubTitle.length} 
             />
           ))}
@@ -218,7 +148,7 @@ const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.8 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
           className="text-xl md:text-2xl font-paradox text-iot-glow font-light tracking-wider mb-4"
         >
           Vishwakarma Institute of Technology, Kondhwa
@@ -228,7 +158,7 @@ const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.0 }}
+          transition={{ duration: 0.8, delay: 1.3 }}
           className="text-lg md:text-xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto"
         >
           Innovating Tomorrow's Connected World Through Technology & Learning
@@ -238,7 +168,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.2 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
