@@ -57,6 +57,28 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // IoT Club Custom Colors
+        iot: {
+          navy: "hsl(var(--iot-navy))",
+          purple: "hsl(var(--iot-purple))",
+          teal: "hsl(var(--iot-teal))",
+          yellow: "hsl(var(--iot-yellow))",
+          glow: "hsl(var(--iot-glow))",
+        },
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-accent": "var(--gradient-accent)",
+        "gradient-glass": "var(--gradient-glass)",
+      },
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        card: "var(--shadow-card)",
+        elegant: "var(--shadow-elegant)",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        paradox: ['Orbitron', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
