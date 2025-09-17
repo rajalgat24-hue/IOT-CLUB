@@ -164,22 +164,6 @@ const HeroSection = () => {
           Innovating Tomorrow's Connected World Through Technology & Learning
         </motion.p>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center text-iot-glow"
-          >
-            <span className="text-sm font-light mb-2 tracking-wide">Scroll to Explore</span>
-            <ChevronDown className="w-6 h-6" />
-          </motion.div>
-        </motion.div>
       </div>
 
       {/* Gradient Overlay */}

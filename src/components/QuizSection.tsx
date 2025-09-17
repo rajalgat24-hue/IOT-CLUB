@@ -343,14 +343,14 @@ const QuizSection = () => {
                   className="bg-gradient-accent h-full rounded-full shadow-glow"
                   initial={{ width: 0 }}
                   animate={{ 
-                    width: `${((currentQuestion + 1) / quizData.length) * 100}%` 
+                    width: `${(score / quizData.length) * 100}%` 
                   }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 />
               </div>
               <div className="flex justify-between items-center mt-3">
                 <span className="text-sm text-muted-foreground font-paradox">
-                  Progress: {Math.round(((currentQuestion + 1) / quizData.length) * 100)}%
+                  Progress: {Math.round((score / quizData.length) * 100)}%
                 </span>
                 <span className="text-sm text-iot-glow font-paradox">
                   Score: {score}/{quizData.length}
