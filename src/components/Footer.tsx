@@ -136,29 +136,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-paradox font-semibold text-foreground">
-              Quick Links
-            </h3>
-            <div className="space-y-2">
-              {['About VIT', 'Join Club', 'Events', 'Projects', 'Resources'].map((link) => (
-                <motion.a
-                  key={link}
-                  href="#"
-                  whileHover={{ x: 5, color: "hsl(var(--iot-teal))" }}
-                  className="block text-muted-foreground hover:text-iot-teal transition-all duration-200 text-sm"
-                >
-                  {link}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
         </div>
 
         {/* Bottom Bar */}

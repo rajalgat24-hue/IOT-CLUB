@@ -141,7 +141,7 @@ const Navbar = () => {
             onMouseLeave={() => setIsMenuHovered(false)}
             style={{ width: '320px' }}
           >
-            <div className="p-12 pt-20">
+            <div className="p-12 pt-20 pl-16">
               {/* Logo Section in Panel */}
               <motion.div
                 className="flex flex-col items-center mb-16"
