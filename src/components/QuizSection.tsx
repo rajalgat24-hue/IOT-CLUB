@@ -202,6 +202,17 @@ const QuizSection = () => {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [quizComplete, setQuizComplete] = useState(false);
+  const [quizData, setQuizData] = useState(() => getRandomQuestions(questionPool));
+
+  // Reset quiz with new random questions
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setSelectedAnswer(null);
+    setShowResult(false);
+    setScore(0);
+    setQuizComplete(false);
+    setQuizData(getRandomQuestions(questionPool));
+  };
 
   const handleAnswerSelect = (answerIndex: number) => {
     setSelectedAnswer(answerIndex);
@@ -256,7 +267,7 @@ const QuizSection = () => {
                "Good try! Practice more IoT concepts."}
             </p>
             <Button 
-              onClick={restartQuiz}
+              onClick={resetQuiz}
               className="bg-gradient-accent text-black font-semibold hover:scale-105 transition-transform"
             >
               Try Again

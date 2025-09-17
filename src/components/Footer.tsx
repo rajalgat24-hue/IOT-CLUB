@@ -33,21 +33,27 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <motion.a
-                href="#"
+                href="https://instagram.com/iot_forum_viit"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, color: "hsl(var(--iot-teal))" }}
                 className="text-muted-foreground hover:text-iot-teal transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.linkedin.com/company/iotforumviit/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, color: "hsl(var(--iot-teal))" }}
                 className="text-muted-foreground hover:text-iot-teal transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://instagram.com/iot_forum_viit"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, color: "hsl(var(--iot-teal))" }}
                 className="text-muted-foreground hover:text-iot-teal transition-colors"
               >

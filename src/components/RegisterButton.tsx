@@ -10,7 +10,9 @@ const RegisterButton = () => {
       className="fixed bottom-8 right-8 z-50"
     >
       <motion.a
-        href="#register"
+        href="https://forms.gle/ME4nSxvvskCKSGnVA"
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.05, rotate: 5 }}
         whileTap={{ scale: 0.95 }}
         className="flex items-center gap-2 px-6 py-3 bg-gradient-accent text-black font-semibold rounded-full shadow-glow glow-accent transition-smooth hover:shadow-elegant group"
