@@ -185,7 +185,7 @@ const Navbar = () => {
               </motion.div>
 
               {/* Menu Items */}
-              <motion.nav className="space-y-6">
+              <motion.nav className="space-y-4">
                 {['About', 'Events', 'Projects', 'Join'].map((item, index) => (
                   <motion.div
                     key={item}
@@ -196,7 +196,7 @@ const Navbar = () => {
                   >
                     <motion.a
                       href={`#${item.toLowerCase()}`}
-                      className="block text-2xl text-foreground hover:text-iot-teal transition-all duration-300 font-medium tracking-wide group cursor-pointer"
+                      className="block text-lg text-foreground hover:text-iot-teal transition-all duration-300 font-medium tracking-wide group cursor-pointer"
                       initial={{ transform: 'translateY(100%)' }}
                       animate={{ transform: 'translateY(0%)' }}
                       transition={{ 
