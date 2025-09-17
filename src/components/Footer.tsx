@@ -92,11 +92,55 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Social Media */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-4"
+          >
+            <h3 className="text-xl font-paradox font-semibold text-foreground">
+              Social Media
+            </h3>
+            <div className="space-y-2">
+              <motion.a
+                href="https://www.instagram.com/iot_club_vit/?igsh=YzljYTk1ODg3Zg%3D%3D#"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 5, color: "hsl(var(--iot-teal))" }}
+                className="flex items-center gap-3 text-muted-foreground hover:text-iot-teal transition-all duration-200 text-sm"
+              >
+                <Instagram className="w-4 h-4" />
+                <span>Instagram</span>
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/company/iotforumviit/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 5, color: "hsl(var(--iot-teal))" }}
+                className="flex items-center gap-3 text-muted-foreground hover:text-iot-teal transition-all duration-200 text-sm"
+              >
+                <Linkedin className="w-4 h-4" />
+                <span>LinkedIn</span>
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/iot_club_vit/?igsh=YzljYTk1ODg3Zg%3D%3D#"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 5, color: "hsl(var(--iot-teal))" }}
+                className="flex items-center gap-3 text-muted-foreground hover:text-iot-teal transition-all duration-200 text-sm"
+              >
+                <Twitter className="w-4 h-4" />
+                <span>Twitter</span>
+              </motion.a>
+            </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="space-y-4"
           >
             <h3 className="text-xl font-paradox font-semibold text-foreground">
@@ -121,7 +165,7 @@ const Footer = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 pt-8 border-t border-iot-teal/20 text-center"
         >
           <p className="text-muted-foreground text-sm">
