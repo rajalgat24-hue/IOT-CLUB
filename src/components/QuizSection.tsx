@@ -5,7 +5,7 @@ import { Float, Text3D, Environment, OrbitControls } from '@react-three/drei';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const quizData = [
+const questionPool = [
   {
     id: 1,
     question: "What does IoT stand for?",
@@ -65,8 +65,97 @@ const quizData = [
     ],
     correct: 0,
     animal: "squirrel"
+  },
+  {
+    id: 6,
+    question: "Which sensor is commonly used to measure temperature and humidity?",
+    options: [
+      "DHT22",
+      "GPS Module",
+      "Accelerometer",
+      "Camera"
+    ],
+    correct: 0,
+    animal: "bear"
+  },
+  {
+    id: 7,
+    question: "What does MQTT stand for?",
+    options: [
+      "Message Queuing Telemetry Transport",
+      "Multi Query Text Transfer",
+      "Mobile Quick Text Transport",
+      "Message Query Transfer Tool"
+    ],
+    correct: 0,
+    animal: "rabbit"
+  },
+  {
+    id: 8,
+    question: "Which microcontroller is popular for IoT projects?",
+    options: [
+      "Arduino",
+      "Hard Drive",
+      "Graphics Card",
+      "RAM"
+    ],
+    correct: 0,
+    animal: "cat"
+  },
+  {
+    id: 9,
+    question: "What is an IoT gateway?",
+    options: [
+      "A bridge between IoT devices and the cloud",
+      "A type of sensor",
+      "A mobile app",
+      "A web browser"
+    ],
+    correct: 0,
+    animal: "dog"
+  },
+  {
+    id: 10,
+    question: "Which wireless technology is designed for long-range, low-power IoT applications?",
+    options: [
+      "LoRaWAN",
+      "Bluetooth Classic",
+      "HDMI",
+      "Ethernet"
+    ],
+    correct: 0,
+    animal: "eagle"
+  },
+  {
+    id: 11,
+    question: "What is edge computing in IoT?",
+    options: [
+      "Processing data closer to IoT devices",
+      "Using sharp-edged devices",
+      "Computing at the edge of a table",
+      "A type of cloud storage"
+    ],
+    correct: 0,
+    animal: "wolf"
+  },
+  {
+    id: 12,
+    question: "Which protocol is lightweight and suitable for constrained IoT devices?",
+    options: [
+      "CoAP",
+      "HTTP",
+      "FTP",
+      "SMTP"
+    ],
+    correct: 0,
+    animal: "turtle"
   }
 ];
+
+const getRandomQuestions = (pool: typeof questionPool, count: number = 5) => {
+  const shuffled = [...pool].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
 
 const ForestScene = () => {
   return (
