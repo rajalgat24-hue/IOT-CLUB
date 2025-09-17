@@ -144,7 +144,7 @@ const Navbar = () => {
             <div className="p-12 pt-20">
               {/* Logo Section in Panel */}
               <motion.div
-                className="flex flex-col items-center mb-12"
+                className="flex flex-col items-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
